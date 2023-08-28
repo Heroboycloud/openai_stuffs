@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="" content="">
+    
+    <title>pdf viewer</title>
+  </head>
+  <body>
+    
+    <p>
+      myapp
+    </p>
+    
+   <canvas id="pdf-canvas"></canvas>
+<script src="js/pdf.min.js"></script>
+<script>
+  PDFJS.getDocument('regex.pdf').then(function(pdf) {
+    // Get the first page of the PDF
+    pdf.getPage(1).then(function(page) {
+      // Set the canvas size to the size of the PDF page
+      var canvas = document.getElementById('pdf-canvas');
+      var context = canvas.getContext('2d');
+      canvas.height = page.getViewport({scale: 1}).height;
+      canvas.width = page.getViewport({scale: 1}).width;
+
+      // Render the page on the canvas
+      page.render({canvasContext: context, scale: 1});
+    });
+  </body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "openai",
+  "version": "1.0.0",
+  "description": "codes containing ai apps using openai gpt model",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ai"
+  ],
+  "author": "Akindel",
+  "license": "MIT"
+}
